@@ -36,4 +36,6 @@
 <script src="./HelloWorld.ts" lang="ts" />
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./HelloWorld.scss" scoped lang="scss"></style>
+<style src="./HelloWorld.scss" scoped lang="scss">
+
+</style>

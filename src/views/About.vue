@@ -1,5 +1,17 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <WeaponTable></WeaponTable>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import WeaponTable from '@/components/WeaponTable/WeaponTable.vue' // @ is an alias to /src
+
+@Component({
+  components: {
+    WeaponTable
+  }
+})
+export default class About extends Vue {}
+</script>
