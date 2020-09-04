@@ -1,10 +1,12 @@
 <template>
   <div>
-    <!-- <v-list-item :key="index" v-for="(weapons, index) in weapons">
-          {{weapons.weaponCategory}}
-    </v-list-item>-->
-    <ul id="weaponList">
-      <li v-for="weapon in weapons" :key="weapon.id">{{weapon.weaponCategory}}</li>
+    <ul v-if="weaponList.length > 0" id="weaponList">
+      <li v-for="weapon in weaponList" :key="weapon.id">{{weapon.weaponCategory}}</li>
+    </ul>
+    <ul v-else>
+      <li>
+        {{weapon.weaponCategory}}
+      </li>
     </ul>
   </div>
 </template>

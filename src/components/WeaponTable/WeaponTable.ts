@@ -1,13 +1,15 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { IBaseWeaponCategory } from '@/Models/IBaseWeapon'
+import { IBaseWeaponCategory, BaseWeaponCategoryDTO } from '@/Models/IBaseWeapon'
 import WeaponCategoryApi from '@/Utility/WeaponCategoryApi'
 
 @Component
-export default class HelloWorld extends Vue {
+export default class WeaponTable extends Vue {
   @Prop() private weaponType!: string
-  private weapons: IBaseWeaponCategory[] = []
+  private weaponList: IBaseWeaponCategory[] = []
+  private weapon: IBaseWeaponCategory = new BaseWeaponCategoryDTO()
 
   async mounted(): Promise<void> {
-    this.weapons = await WeaponCategoryApi.getAllWeapons()
+    this.weaponList = await WeaponCategoryApi.getAllWeapons()
+    // this.weapon = await WeaponCategoryApi.getByWeaponId(5)
   }
 }
